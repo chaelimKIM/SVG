@@ -1,0 +1,51 @@
+<html>
+    <body>
+        <svg width="600" height="150" viewBox="0 0 730 150">
+            <text 
+              id = "text1"
+              x="10" y="80" 
+              fill="purple" font-size="100" font-family="'Leckerli One', cursive"
+              textLength="600">
+              SVG
+              <tspan id = "text2" dy="-30" fill="grey" font-size="60">SAMPLE</tspan>
+              <tspan id = "text3" dy="46" dx="-14" font-size="100">TEST</tspan>
+            </text>
+        </svg>
+
+        <div class="button_div">
+            <button onclick="rotate()">rotate</button>
+            <button onclick="letter_space()">letter spacing</button>
+            <button onclick="text_deco()">text-decoration</button>
+        </div>
+    </body>
+    
+    <script>
+        function rotate(){
+            var a = document.getElementById("text1");
+            var b = document.getElementById("text2");
+            var c = document.getElementById("text3");
+            const getRandom = (min, max) => Math.floor(Math.random() * (max - min) + min);
+            let rand1 = getRandom(-90, 90);
+            let rand2 = getRandom(-90, 90);
+            let rand3 = getRandom(-90, 90);
+            a.setAttribute("rotate",rand1);
+            b.setAttribute("rotate",rand2);
+            c.setAttribute("rotate",rand3);
+        }
+        function letter_space(){
+            var a = document.getElementById("text1");
+            const getRandom = (min, max) => Math.floor(Math.random() * (max - min) + min);
+            let rand = getRandom(-10, 300);
+            a.setAttribute("letter-spacing",rand);
+
+        }
+        function text_deco(){
+            var a = document.getElementById("text1");
+            var b = document.getElementById("text2");
+            var c = document.getElementById("text3");
+            a.setAttribute("text-decoration","overline");
+            b.setAttribute("text-decoration","underline");
+            c.setAttribute("text-decoration","line-through");
+        }
+    </script>
+</html>
